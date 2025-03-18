@@ -1,0 +1,6 @@
+
+response_generator:
+  service_provider : 'grok'
+  model_name : 'llama3-70b-8192' #'llama-3.3-70b-versatile'
+  base_url : 'NA'
+  temperature : 1

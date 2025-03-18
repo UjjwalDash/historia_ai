@@ -1,13 +1,17 @@
 import yaml
+import os
 from langchain_openai import ChatOpenAI
 from src.models.grok_models import load_grok_models
+from dotenv import load_dotenv
+
+load_dotenv("src/config/tools/.email_env")
 
 with open('src/config/models/models_config.yaml', 'r') as file:
     config = yaml.safe_load(file)
 
 service_provider_query = config['response_generator']['service_provider']
 model_name_query = config['response_generator']['model_name']
-api_key_query = config['response_generator']['api_key']
+api_key_query = os.getenv("API_KEY")
 base_url_query = config['response_generator']['base_url']
 temperature_query = config['response_generator']['temperature']
 
