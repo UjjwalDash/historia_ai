@@ -1,0 +1,3 @@
+cache_memory : 'true'
+long_term_memory : 'false'
+sort_term_memory : 'false'
