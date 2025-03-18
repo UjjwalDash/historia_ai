@@ -6,6 +6,7 @@ langsmith
 langchain-community
 langchain-core
 langchain-openai
+langchain_groq 
 notebook
 tavily-python
 wikipedia
@@ -17,6 +18,7 @@ python-dotenv
 boto3
 openpyxl
 chromadb
+dotenv
 
 
 # Web framework and related packages
