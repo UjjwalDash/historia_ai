@@ -6,6 +6,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
 from src.models.models import query_llm
 from dotenv import load_dotenv
+import streamlit as st
 import json
 # Load environment variables
 load_dotenv("src/config/tools/.email_env")
@@ -57,6 +58,8 @@ def email_sender(otp: str, question: str) -> str:
     # Only proceed if OTP verification passes
     sender_email = os.getenv("EMAIL_SENDER")
     sender_password = os.getenv("EMAIL_PASSWORD")
+    sender_email = st.secrets["EMAIL_SENDER"]
+    sender_password = st.secrets["EMAIL_PASSWORD"]
     
     subject = "Historical Places to Visit"
     body = f"Here is your personalized trip plan with historical places to visit:\n\n{clean_plan}"

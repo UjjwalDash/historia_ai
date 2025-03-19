@@ -3,6 +3,7 @@ import random
 import os
 import json
 from email.mime.text import MIMEText
+import streamlit as st
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -30,6 +31,8 @@ def email_validator(receiver_email):
 
     sender_email = os.getenv("EMAIL_SENDER")  # Your email
     sender_password = os.getenv("EMAIL_PASSWORD")  # App password
+    sender_email = st.secrets["EMAIL_SENDER"]
+    sender_password = st.secrets["EMAIL_PASSWORD"]
 
     otp = generate_otp()
     save_otp_json(receiver_email, otp)  # Save OTP to JSON file

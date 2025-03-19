@@ -3,6 +3,8 @@ import os
 from langchain_openai import ChatOpenAI
 from src.models.grok_models import load_grok_models
 from dotenv import load_dotenv
+import streamlit as st
+
 
 load_dotenv("src/config/tools/.email_env")
 
@@ -12,6 +14,7 @@ with open('src/config/models/models_config.yaml', 'r') as file:
 service_provider_query = config['response_generator']['service_provider']
 model_name_query = config['response_generator']['model_name']
 api_key_query = os.getenv("API_KEY")
+api_key_query = st.secrets["API_KEY"]
 base_url_query = config['response_generator']['base_url']
 temperature_query = config['response_generator']['temperature']
 
